@@ -8,6 +8,7 @@ import java.util.Scanner;
 import entities.Contract;
 import entities.Installment;
 import services.ContractService;
+import services.NubankService;
 import services.PaypalService;
 
 public class Program {
@@ -31,7 +32,7 @@ public class Program {
 		System.out.print("Entre com o número de parcelas: ");
 		int n = scanner.nextInt();
 
-		ContractService contractService = new ContractService(new PaypalService());
+		ContractService contractService = new ContractService(new NubankService());
 
 		contractService.processContract(obj, n);
 
